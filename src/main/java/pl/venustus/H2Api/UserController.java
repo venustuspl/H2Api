@@ -14,6 +14,16 @@ public class UserController {
 
     @GetMapping("/api/users")
     public Iterable<User> getUsers() {
+        User user = new User();
+        user.setEmail("m@2.pl");
+        user.setName("Mi");
+        userRepository.save(user);
+
+        User user1 = new User();
+        user1.setEmail("md@2.pl");
+        user1.setName("Mai");
+        userRepository.save(user1);
+
         return userRepository.findAll();
     }
 }
